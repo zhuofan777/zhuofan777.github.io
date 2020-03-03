@@ -13,10 +13,12 @@
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
   <meta name="description" content="">
   <meta name="author" content="zhuofan777">
   <meta name="keywords" content="">
-  <title>友链 ~ Hexo</title>
+  <title>友链 - Hexo</title>
 
   <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css"  >
 <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css"  >
@@ -26,6 +28,8 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
 
 
+
+  <link rel="stylesheet" href="/lib/prettify/tomorrow.min.css"  >
 
 <link rel="stylesheet" href="/css/main.css"  >
 
@@ -41,7 +45,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>Hexo</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>小埋的笔记本</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -66,14 +70,6 @@
           
           
           <li class="nav-item">
-            <a class="nav-link" href="/archives/">归档</a>
-          </li>
-        
-          
-          
-          
-          
-          <li class="nav-item">
             <a class="nav-link" href="/categories/">分类</a>
           </li>
         
@@ -82,7 +78,7 @@
           
           
           <li class="nav-item">
-            <a class="nav-link" href="/tags/">标签</a>
+            <a class="nav-link" href="/about/">关于</a>
           </li>
         
           
@@ -90,7 +86,7 @@
           
           
           <li class="nav-item">
-            <a class="nav-link" href="/about/">关于</a>
+            <a class="nav-link" href="/links/">友链</a>
           </li>
         
         
@@ -264,6 +260,14 @@
 
 
 
+  <script src="https://cdn.staticfile.org/prettify/188.0.0/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
 
 
   <script src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
@@ -273,7 +277,7 @@
         '  ',
         "友情链接&nbsp;",
       ],
-      cursorChar: "_",
+      cursorChar: "|",
       typeSpeed: 70,
       loop: false,
     });
