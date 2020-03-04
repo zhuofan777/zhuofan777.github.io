@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://s2.ax1x.com/2020/03/03/34qQ9f.png">
+  <link rel="icon" type="image/png" href="https://s2.ax1x.com/2020/03/03/34quNt.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="description" content="">
+  <meta name="author" content="zhuofan777">
+  <meta name="keywords" content="">
+  <title>js学习1 - 小埋的笔记本</title>
+
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.13.0/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="/lib/prettify/tomorrow.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>小埋的笔记本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/links/">友链</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" false
+         style="background: url('https://s2.ax1x.com/2020/03/04/3I8Ivn.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期三, 三月 4日 2020, 10:59 晚上
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    1.8k 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      7 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h2 id="javascript中的变量作用域"><a href="#javascript中的变量作用域" class="headerlink" title="javascript中的变量作用域"></a>javascript中的变量作用域</h2><p>js中全局作用域分为两种，局部变量和全局变量。<br>局部变量的作用范围是变量所在的函数。<br>例如：</p>
+<pre><code class="javascript">function test(){
+    var a = 10;
+};
+test();
+console.log(a);</code></pre>
+<p>结果：</p>
+<pre><code>Uncaught ReferenceError: a is not defined</code></pre><p>全局变量定义在函数外，它的作用域是整个代码片段。如果在函数中存在相同命名的局部变量，则在函数中全局变量的值无效，使用局部变量的值。<br>例如下面第一段代码在函数中变量前加var，那么此变量就是新的<strong>局部变量</strong>，即使名称相同也不会影响到先前同名的全局变量。而如果变量前没有var，则默认为全局变量，如第二段。</p>
+<p>代码：</p>
+<pre><code class="javascript">var a = 10;
+function test(){
+    var a = 1;
+    console.log(a);
+};
+test();
+console.log(a);</code></pre>
+<p>结果：</p>
+<pre><code>1
+10</code></pre><p>代码：</p>
+<pre><code class="javascript">var a = 10;
+function test(){
+    a = 1;
+    console.log(a);
+};
+test();
+console.log(a);</code></pre>
+<p>结果:</p>
+<pre><code>1
+1</code></pre><hr>
+<h2 id="javascript中的this"><a href="#javascript中的this" class="headerlink" title="javascript中的this"></a>javascript中的this</h2><blockquote>
+<p>1.在方法中，this 表示该方法所属的对象。<br>2.如果单独使用，this 表示全局对象。<br>3.在函数中，this 指向函数的所属者。<br>4.在函数中，在严格模式下，this 是未定义的(undefined)。<br>5.在事件（HTML 事件句柄）中，this 表示接收事件的元素。<br>6.类似 call() 和 apply() 方法允许切换函数执行的上下文环境（context），可以将 this 引用到任何对象。<br><a href="https://www.runoob.com/js/js-this.html" target="_blank" rel="noopener" >–摘录自菜鸟教程</a></p>
+</blockquote>
+<hr>
+<p>除了上述的情况外，还有一种情况。下面不考虑nodejs环境，在浏览器环境中，进行对每种情况解释。</p>
+<p> 1.在方法中，this 表示该方法所属的对象。<br> 如下面代码所示，this在cout（）方法中代表的就是cout（）方法所属的对象student。</p>
+<p>代码：</p>
+<pre><code class="javascript">var student = {
+  name: &quot;ming&quot;,
+  id : &quot;17274000&quot;,
+  cout : function() {
+    return this.name + &quot;&#39;s id is &quot; + this.id;
+  }
+}; 
+console.log(student.cout());</code></pre>
+<p>结果：</p>
+<pre><code>ming&#39;s id is 17274000</code></pre><p>2.如果单独使用，this 表示全局对象。<br>单独使用就是指不在函数方法或是HTML代码中，此时this就是代指浏览器window。</p>
+<p>代码：</p>
+<pre><code class="javascript">var a = this;
+console.log(a===window);
+a = 1;
+console.log(this.a,window.a);</code></pre>
+<p>结果：</p>
+<pre><code>true
+1 1</code></pre><p>3.在函数中，this 指向函数的所属者。<br>而浏览器中函数的所属者还是window，所以this还是等于window。</p>
+<p>代码：</p>
+<pre><code class="javascript">function myFunction() {
+  return this;
+}
+console.log(myFunction()===window);</code></pre>
+<p>结果：</p>
+<pre><code>true</code></pre><p>4.在函数中，在严格模式下，this 是未定义的(undefined)。<br>严格模式不允许这样使用，所以返回undefined。</p>
+<p>代码：</p>
+<pre><code class="javascript">&quot;use strict&quot;;
+function myFunction() {
+  return this;
+}
+console.log(myFunction());</code></pre>
+<p>结果：</p>
+<pre><code>undefined</code></pre><p>5.在事件（HTML 事件句柄）中，this 表示接收事件的元素。<br>如代码所示，this代指的是接收事件的button元素，于是执行了display=‘none’的操作。</p>
+<p>代码：</p>
+<pre><code class="html">&lt;button onclick=&quot;this.style.display=&#39;none&#39;&quot;&gt;点击&lt;/button&gt;</code></pre>
+<p>结果：</p>
+<pre><code class="javascript">按钮消失了</code></pre>
+<p>6.类似 call() 和 apply() 方法允许切换函数执行的上下文环境（context），可以将 this 引用到任何对象。<br>如下所示，this代指了student2对象，利用student1的方法输出了student2.</p>
+<p>代码：</p>
+<pre><code class="javascript">var student1 = {
+    name: &quot;hong&quot;,
+    id: &quot;17274010&quot;,
+    cout: function() {
+        return this.name + &quot;&#39;s id is &quot; + this.id;
+    }
+}
+var student2 = {
+    name: &quot;ming&quot;,
+    id: &quot;17274000&quot;,
+}
+var x = student1.cout.call(student2);
+console.log(x);
+</code></pre>
+<p>结果：</p>
+<pre><code>ming&#39;s id is 17274000</code></pre><p>7.构造函数中的this<br>虽然js中的构造函数只是被new操作符调用的普通函数，但是它却免去了return this的烦恼。this绑定到了当前的对象。<br><a name="top"></a><br>代码：</p>
+<pre><code class="javascript">function Student(name) {
+    this.name = name;
+    this.hello = function () {
+        console.log(&#39;Hello, &#39; + this.name + &#39;!&#39;);
+    }
+}
+var xiaoming = new Student(&#39;小明&#39;);
+xiaoming.name;
+xiaoming.hello();</code></pre>
+<p>结果：</p>
+<pre><code>Hello, 小明!</code></pre><blockquote>
+<p>优先级 <strong>new &gt; 显式 &gt; 隐式 &gt; 默认</strong><br>判断this的方法如下：<br>&lt;1&gt; 函数是否在new中调用（new绑定）？<br>&lt;2&gt;函数是否通过call、apply（显式绑定）或者bind（硬绑定）调用？<br>&lt;3&gt; 函数是否在某个上下文对象中调用（隐式绑定）？<br>&lt;4&gt;如果都不是的话，使用的默认绑定。如果在严格模式下，就绑定到undefined，否则绑定到全局对象。<br><a href='https://www.liaoxuefeng.com/wiki/1022910821149312/1023022126220448' target="_blank" rel="noopener">–摘录自csdn</a></p>
+</blockquote>
+<hr>
+<h2 id="javascript中的面向对象跟其他面向对象程序设计语言，比如java有什么不同"><a href="#javascript中的面向对象跟其他面向对象程序设计语言，比如java有什么不同" class="headerlink" title="javascript中的面向对象跟其他面向对象程序设计语言，比如java有什么不同"></a>javascript中的面向对象跟其他面向对象程序设计语言，比如java有什么不同</h2><blockquote>
+<p>类和实例是大多数面向对象编程语言的基本概念。不过，在JavaScript中，这个概念需要改一改。JavaScript<strong>不区分类和实例的概念</strong>，而是通过<strong>原型</strong>（prototype）来实现面向对象编程。<br><a href='https://www.liaoxuefeng.com/wiki/1022910821149312/1023022126220448' target="_blank" rel="noopener">–摘录自廖雪峰的官方网站</a></p>
+</blockquote>
+<p>js最显著的特点就是没有类。下面简单解释由于没有类js如何实现面向对象。</p>
+<pre><code class="javascript">var Student = {
+    name: &#39;Robot&#39;,
+    height: 1.2,
+    run: function () {
+        console.log(this.name + &#39; is running...&#39;);
+    }
+};
+
+var xiaoming = {
+    name: &#39;小明&#39;
+};
+
+xiaoming.__proto__ = Student;</code></pre>
+<p>小明这个对象是从 Student继承而来的，他可以使用Student的run()方法。<br>但是js中的继承<strong>只是一个对象的原型指向另一个对象</strong>。也就是说对象的原型指向其他对象就可以变成任何对象的“子类”。通过如下的操作，重新为小明指定原型。所以可见js和其他面向对象语言<strong>继承</strong>方式由很大不同。</p>
+<pre><code class="javascript">xiaoming.__proto__ = Bird;</code></pre>
+<p>这样后xiaoming就成了Bird。<br><em>实际情况可以使用Object.create()方法传入一个原型对象</em></p>
+<pre><code class="javascript">var s = Object.create(Student);</code></pre>
+<p>除了上面的构造方法外，还可以使用<a href="#top">上文</a>提及的构造函数new来创建新的对象。<br>这里的<strong>new</strong>是第二处明显的不同。由于没有类，所以是对象直接绑定对象。而实质上，js这里仅仅是借用了关键字 new，仅此而已；换句话说，ECMA 完全可以用其它非new 表达式来用调用构造器创建对象。</p>
+<p><a href="https://blog.csdn.net/fhjdzkp/article/details/79707749" target="_blank" rel="noopener">一个形象的解释</a></p>
+<p>在 ES6 规范中，引入了 class 的概念。但是js 中任然并没有一个真正的 class 原始类型，class实则还是一个函数，它的原理还是是<strong>原型继承</strong>。</p>
+<hr>
+<h2 id="javascript中的闭包怎么理解"><a href="#javascript中的闭包怎么理解" class="headerlink" title="javascript中的闭包怎么理解"></a>javascript中的闭包怎么理解</h2><blockquote>
+<p>高阶函数除了可以接受函数作为参数外，还可以把函数作为结果值返回。<br><a href='https://www.liaoxuefeng.com/wiki/1022910821149312/1023022126220448' target="_blank" rel="noopener">–摘录自廖雪峰的官方网站</a></p>
+</blockquote>
+<hr>
+<p>闭包就是一种程序结构。高阶函数返回了一个函数，这样的返回内部的函数中就可能会包含外部函数的相关参数和变量。</p>
+<pre><code class="javascript">function lazy_sum(arr) {
+    var sum = function () {
+        return arr.reduce(function (x, y) {
+            return x + y;
+        });
+    }
+    return sum;
+}</code></pre>
+<p>如上所示，lazy_sum它返回求和的结果是function sum（），作为一般的函数返回后与原函数就没关系，但是现在它的arr还是被新函数继续使用。<br><strong>换句话说就是返回的函数携带了某个值，这个值可以看成是私有变量，外部可以通过调用这个返回的函数来获取这个值。</strong><br>利用闭包原理可以写出计数器：</p>
+<pre><code class="javascript">var add = (function(){
+    var count = 0;//外部访问的计数器，局部变量.
+    var fun = function(){
+        return ++count;
+    }
+    return fun;
+})();</code></pre>
+<blockquote>
+<p>参考<br>CSDN，廖雪峰的官方网站，菜鸟教程</p>
+</blockquote>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/js/">js</a>
+                
+                  <a class="hover-with-bg" href="/tags/%E5%8D%93%E8%B6%8A%E5%B7%A5%E7%A8%8B/">卓越工程</a>
+                
+              </span>
+            
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container">
+        <div id="toc">
+  <p class="h5"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+      </div>
+    
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="zhuofan777/blog"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv"></span>总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv"></span>总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人&nbsp;
+  
+  <br>
+
+
+
+    
+
+
+    <!-- cnzz Analytics icon -->
+    
+      <span id="cnzz_stat_icon_1278656141" style="display: none"></span>
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script src="https://cdn.staticfile.org/popper.js/1.16.1/umd/popper.min.js" ></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script src="https://cdn.staticfile.org/mdbootstrap/4.13.0/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+  <script src="https://cdn.staticfile.org/tocbot/4.10.0/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var navHeight = $('#navbar').height();
+      var toc = $('#toc');
+      var main = $('main');
+      var tocT = navHeight + (toc.offset().top - main.offset().top);
+      var tocLimMin = main.offset().top - navHeight;
+      var tocLimMax = $('#comments').offset().top - navHeight;
+      $(window).scroll(function () {
+        var scroH = document.body.scrollTop + document.documentElement.scrollTop;
+        if (tocLimMin <= scroH && scroH <= tocLimMax) {
+          toc.css({
+            'display': 'block',
+            'position': 'fixed',
+            'top': tocT,
+          });
+        } else if (scroH <= tocLimMin) {
+          toc.css({
+            'position': '',
+            'top': '',
+          });
+        } else if (scroH > tocLimMax) {
+          toc.css('display', 'none');
+        }
+      });
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        scrollSmooth: true,
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc > p').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  <!-- cnzz Analytics -->
+  
+    <script src="//s4.cnzz.com/z_stat.php?id=1278656141&show=pic" type="text/javascript"></script>
+  
+
+
+
+  <script src="https://cdn.staticfile.org/prettify/188.0.0/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "js学习1&nbsp;",
+      ],
+      cursorChar: "|",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
