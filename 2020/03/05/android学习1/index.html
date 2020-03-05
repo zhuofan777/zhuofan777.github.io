@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://s2.ax1x.com/2020/03/03/34qQ9f.png">
+  <link rel="icon" type="image/png" href="https://s2.ax1x.com/2020/03/03/34quNt.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="description" content="">
+  <meta name="author" content="zhuofan777">
+  <meta name="keywords" content="">
+  <title>android学习1 - 小埋的笔记本</title>
+
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.13.0/css/mdb.min.css"  >
+<link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css"  >
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+
+
+
+  <link rel="stylesheet" href="/lib/prettify/tomorrow.min.css"  >
+
+<link rel="stylesheet" href="/css/main.css"  >
+
+
+  <link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"  >
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>小埋的笔记本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">归档</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">标签</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于</a>
+          </li>
+        
+          
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/links/">友链</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" false
+         style="background: url('https://s2.ax1x.com/2020/03/04/3I8Ivn.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <br>
+              
+                <p class="mt-3">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+                  星期四, 三月 5日 2020, 12:51 下午
+                </p>
+              
+
+              <p>
+                
+                  
+                  &nbsp;<i class="far fa-chart-bar"></i>
+                  <span class="post-count">
+                    1.7k 字
+                  </span>&nbsp;
+                
+
+                
+                  
+                  &nbsp;<i class="far fa-clock"></i>
+                  <span class="post-count">
+                      6 分钟
+                  </span>&nbsp;
+                
+
+                
+                  <!-- 不蒜子统计文章PV -->
+                  
+                  &nbsp;<i class="far fa-eye" aria-hidden="true"></i>&nbsp;
+                  <span id="busuanzi_container_page_pv">
+                    <span id="busuanzi_value_page_pv"></span> 次
+                  </span>&nbsp;
+                
+              </p>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto" id="post">
+          <div class="markdown-body">
+            <h1 id="Android-Studio下的APP目录结构"><a href="#Android-Studio下的APP目录结构" class="headerlink" title="Android Studio下的APP目录结构"></a>Android Studio下的APP目录结构</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>​        一个AS（全称Android Studio）项目由通常由<strong>应用程序模块和库模块</strong>组成，应用程序模块是可以单独的运行的，而库模块只能够依附于应用程序模块才能够运行，自己是无法独立运行的；</p>
+<p>​        库模块也是有res、java、AndroidManifest文件的，和应用程序模块很像。</p>
+<p>​        两者主要的区别在于库模块内的 build.gradle 文件是标记为 <strong>library</strong> 类型的，而应用程序模块内的 build.gradle 文件标记为 <strong>application</strong> 的。</p>
+<hr>
+<h3 id="Project-模式下的结构"><a href="#Project-模式下的结构" class="headerlink" title="Project 模式下的结构"></a>Project 模式下的结构</h3><p><img src="https://s2.ax1x.com/2020/03/05/37nZOf.jpg" srcset="/img/loading.gif" alt="Project"></p>
+<p>1、.gradle和.idea</p>
+<p>​        这两个目录下放置的都是Android Studio自动生成的一些文件。<br>2、app </p>
+<p>​        项目中的代码、资源等内容几乎都是放置在这个目录下的。<br>3、build </p>
+<p>​        主要包含了一些在编译时自动生成的文件。</p>
+<p>4、gradle </p>
+<p>​        这个目录下包含了gradle wrapper的<strong>配置文件</strong>，使用gradle wrapper的方式不需要提前将gradle下载好，而是会自动根据本地的缓存情况决定是否需要联网下载gradle。Android Studio默认没有启动gradle wrapper的方式，如果需要打开，可以点击Android Studio导航栏 –&gt; File –&gt; Settings –&gt; Build，Execution，Deployment –&gt; Gradle，进行配置更改。<br>5、.gitignore </p>
+<p>​        这个文件是用来将指定的目录或文件<strong>排除在版本控制之外</strong>的。</p>
+<p>6、build.gradle</p>
+<p>​        这是项目全局的gradle构建<strong>脚本</strong>。<br>7、gradle.properties</p>
+<p>​        这个文件是全局的gradle<strong>配置文件</strong>，在这里配置的属性将会影响到项目中所有的gradle编译脚本。<br>8、gradlew和gradlew.bat</p>
+<p>​        这两个文件是用来在命令行界面中执行gradle命令的，其中gradlew是在Linux或Mac系统中使用的，gradlew.bat是在Windows系统中使用的。</p>
+<p>9、MyHello.iml </p>
+<p>​        iml 文件是用于标识这是一个IntelliJ IDEA项目。<br>10、local.properties</p>
+<p>​        这个文件用于指定本机中的Android SDK路径，通常内容都是自动生成的，我们并不需要修改。除非你本机中的Android SDK位置发生了变化，那么就将这个文件中的路径改成新的位置即可。<br>11、settings.gradle </p>
+<p>​        这个文件用于<strong>指定项目中所有引入的模块</strong>。<br>12、app （ module ）目录结构</p>
+<h3 id="module的结构"><a href="#module的结构" class="headerlink" title="module的结构"></a>module的结构</h3><p><img src="https://s2.ax1x.com/2020/03/05/37CI4f.jpg" srcset="/img/loading.gif" alt="app"></p>
+<p>​    1、build</p>
+<p>​        这个目录和外层的 build 目录类似，主要也是包含了一些在编译时自动生成的文件，不过它里面的内容会更多更杂，我们不需要过多关心。<br>​    2、libs </p>
+<p>​        如果你的项目中使用到了第三方 jar 包，就需要把这些jar包都放在 libs 目录下，放在这个目录下的jar包都会被自动添加到构建路径里去。</p>
+<p>​    3、src/AndroidTest</p>
+<p>​        此处是用来编写 Android Test 测试用例的，可以对项目进行一些自动化测试。<br>​    4、src/main/java</p>
+<p>​        java目录是放置我们所有 java 代码的地方。<br>​    5、src/main/res</p>
+<p>​        这个目录下的内容就有点多了。简单点说，就是你在项目中使用到的所有图片，布局，字符串等资源都要存放在这个目录下。当然这个目录下还有很多子目录，<strong>图片放在 drawable 目录下，布局放在 layout 目录下，字符串放在 values 目录下，以mipmap 开头的文件夹都是用来放应用图标的</strong>。</p>
+<p>​    6、main/AndroidManifest.xml </p>
+<p>​        这是你整个 Android 项目的配置文件，<strong>你在程序中定义的所有四大组件都需要在这个文件里注册</strong>，另外还可以在这个文件中<strong>给应用程序添加权限声明</strong>。<br>​    7、test</p>
+<p>​        此处是用来编写 Unit Test 测试用例的，是对项目进行自动化测试的另一种方式。<br>​    8、.gitignore</p>
+<p>​        这个文件用于将 app<strong>模块</strong>内的指定的目录或文件排除在版本控制之外，作用和外层的 .gitignore 文件类似。</p>
+<p>​    9、app.iml </p>
+<p>​        IntelliJ IDEA 项目自动生成的文件。<br>​    10、build.gradle </p>
+<p>​        这是 app 模块的 gradle 构建<strong>脚本</strong>，这个文件中会指定很多项目构建相关的配置。<br>​    11、proguard-rules.pro</p>
+<p>​        这个文件用于指定项目代码的混淆规则，当代码开发完成后打成安装包文件，如果不希望代码被别人破解，通常会将代码混淆，从而让破解者难以阅读。</p>
+<hr>
+<h3 id="build-gradle-文件解析"><a href="#build-gradle-文件解析" class="headerlink" title="build.gradle 文件解析"></a>build.gradle 文件解析</h3><p>Android Studio 工程根目录下的 build.gradle 通常不需要修改这个文件中的内容，除非需要添加一些全局的项目构建配置。<br>APP（模块）目录下的 build.gradle 文件是 app（这里是 moduletwo） 模块的 gradle 构建脚本，<strong>一般用来管理 app （这里是 moduletwo）包名、版本以及添加和修改依赖库</strong>。</p>
+<h4 id="工程中根路径下的-build-gradle-文件"><a href="#工程中根路径下的-build-gradle-文件" class="headerlink" title="工程中根路径下的 build.gradle 文件"></a>工程中根路径下的 build.gradle 文件</h4><pre><code class="java">buildscript {
+    repositories {
+        google()  //声明代码托管仓库Google
+        jcenter() //指定代码的托管仓库为 jcenter        
+    }
+    dependencies {
+        //声明 gradle的构建版本，
+        classpath &#39;com.android.tools.build:gradle:3.1.4&#39;
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+allprojects {
+    repositories {
+        google()   //Jar下载的仓库中心
+        jcenter()  //Jar下载的仓库中心
+    }
+}
+//开启一个任务，指定每次编译都要清空工程
+task clean(type: Delete) {
+    delete rootProject.buildDir
+</code></pre>
+<h4 id="某个-Module（模块）中的-build-gradle-文件"><a href="#某个-Module（模块）中的-build-gradle-文件" class="headerlink" title="某个 Module（模块）中的 build.gradle 文件"></a>某个 Module（模块）中的 build.gradle 文件</h4><pre><code class="java">apply plugin: &#39;com.android.application&#39; //表示是一个应用程序的模块，可独立运行
+//apply plugin: &#39;com.android.library&#39; //表示是一个依赖库，不能独立运行
+android {
+    compileSdkVersion 25        //指定项目的编译版本
+    buildToolsVersion &quot;25.0.1“  //指定项目构建工具的版本
+    defaultConfig {
+        applicationId &quot;com.hhqy.learnndk2&quot; //指定包名
+        minSdkVersion 14        //指定最低的兼容的Android系统版本
+        targetSdkVersion 25     //指定你的目标版本，表示你在该Android系统版本已经做过充分的测试
+        versionCode 1           //版本号
+        versionName &quot;1.0&quot;       //版本名称
+    }
+    buildTypes { //指定生成安装文件的配置，常有两个子包:release,debug，注：直接运行的都是debug安装文件
+        release { //用于指定生成正式版安装文件的配置
+            minifyEnabled false     //指定是否对代码进行混淆，true表示混淆
+            //指定混淆时使用的规则文件，proguard-android.txt指所有项目通用的混淆规则，
+     //proguard-rules.pro当前项目特有的混淆规则
+            proguardFiles getDefaultProguardFile(&#39;proguard-android.txt&#39;), &#39;proguard-rules.pro&#39;
+dependencies { //指定当前项目的所有依赖关系：本地依赖、库依赖、远程依赖
+    compile fileTree(dir: &#39;libs&#39;, include: [&#39;*.jar&#39;])//本地依赖
+    androidTestCompile(&#39;com.android.support.test.espresso:espresso-core:2.2.2&#39;, {
+        exclude group: &#39;com.android.support&#39;, module: &#39;support-annotations&#39;
+    })
+
+ ‘  //远程依赖，com.android.support是域名部分，appcompat-v7是组名称，25.0.1是版本号
+    compile &#39;com.android.support:appcompat-v7:25.0.1
+    compile project(&#39;:hello&#39;)//库依赖
+    testCompile ‘junit:junit:4.12’  //声明测试用例库
+    compile &#39;com.android.support.constraint:constraint-layout:1.0.0-alpha7&#39;
+}
+</code></pre>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            <p>
+            
+            
+              <span>
+                <i class="iconfont icon-tag"></i>
+                
+                  <a class="hover-with-bg" href="/tags/android/">android</a>
+                
+              </span>
+            
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container">
+        <div id="toc">
+  <p class="h5"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+      </div>
+    
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+  <script defer src="https://utteranc.es/client.js"
+          repo="zhuofan777/blog"
+          issue-term="pathname"
+  
+          label="utterances"
+    
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+
+    
+  </div>
+</div>
+
+    
+  </main>
+
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
+
+    
+  
+    <!-- 不蒜子统计PV -->
+    
+    &nbsp;<span id="busuanzi_container_site_pv"></span>总访问量 
+          <span id="busuanzi_value_site_pv"></span> 次&nbsp;
+  
+  
+    <!-- 不蒜子统计UV -->
+    
+    &nbsp;<span id="busuanzi_container_site_uv"></span>总访客数 
+            <span id="busuanzi_value_site_uv"></span> 人&nbsp;
+  
+  <br>
+
+
+
+    
+
+
+    <!-- cnzz Analytics icon -->
+    
+      <span id="cnzz_stat_icon_1278656141" style="display: none"></span>
+    
+
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script src="https://cdn.staticfile.org/popper.js/1.16.1/umd/popper.min.js" ></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script src="https://cdn.staticfile.org/mdbootstrap/4.13.0/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+
+  <script src="/js/lazyload.js" ></script>
+
+
+
+  
+  <script src="https://cdn.staticfile.org/tocbot/4.10.0/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var navHeight = $('#navbar').height();
+      var toc = $('#toc');
+      var main = $('main');
+      var tocT = navHeight + (toc.offset().top - main.offset().top);
+      var tocLimMin = main.offset().top - navHeight;
+      var tocLimMax = $('#comments').offset().top - navHeight;
+      $(window).scroll(function () {
+        var scroH = document.body.scrollTop + document.documentElement.scrollTop;
+        if (tocLimMin <= scroH && scroH <= tocLimMax) {
+          toc.css({
+            'display': 'block',
+            'position': 'fixed',
+            'top': tocT,
+          });
+        } else if (scroH <= tocLimMin) {
+          toc.css({
+            'position': '',
+            'top': '',
+          });
+        } else if (scroH > tocLimMax) {
+          toc.css('display', 'none');
+        }
+      });
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        scrollSmooth: true,
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc > p').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+<!-- Plugins -->
+
+
+  
+
+  
+
+  
+
+  
+
+  <!-- cnzz Analytics -->
+  
+    <script src="//s4.cnzz.com/z_stat.php?id=1278656141&show=pic" type="text/javascript"></script>
+  
+
+
+
+  <script src="https://cdn.staticfile.org/prettify/188.0.0/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint  linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+
+  <script src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "android学习1&nbsp;",
+      ],
+      cursorChar: "|",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <script>
+    $("#post img:not(.no-zoom img, img[no-zoom])").each(
+      function () {
+        var element = document.createElement("a");
+        $(element).attr("data-fancybox", "images");
+        $(element).attr("href", $(this).attr("src"));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
